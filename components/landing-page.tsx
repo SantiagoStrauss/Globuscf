@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CheckCircle, Shield, Zap, Globe, Building, Landmark, Plane, ShoppingBag, Stethoscope, Umbrella, Phone, Car, GraduationCap, Wheat } from "lucide-react" // Removed BarChart, Users, Briefcase
-import { useRouter } from "next/navigation" // Opcional si usas redireccionamiento programático
 
 export const runtime = 'edge';
 
@@ -195,63 +194,63 @@ export function LandingPageComponent() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      <header className="bg-white shadow-sm">
-        <div className="container mx-auto px-4 py-4">
-          <nav className="flex justify-between items-center">
-            <div className="text-2xl font-bold text-blue-600">GlobusScreen</div>
-            <div className="hidden md:flex space-x-6">
-              <Link href="#" className="text-gray-600 hover:text-blue-600">{t.solutions}</Link>
-              <Link href="#" className="text-gray-600 hover:text-blue-600">{t.data}</Link>
-              <Link href="#" className="text-gray-600 hover:text-blue-600">{t.pricing}</Link>
-              <Link href="#" className="text-gray-600 hover:text-blue-600">{t.enterprise}</Link>
-            </div>
-            <div className="hidden md:flex space-x-4 items-center">
-              <Link href="/auth-page?mode=login" className="text-blue-600 hover:underline">
-                {t.login}
-              </Link>
-              <Button className="bg-blue-600 hover:bg-blue-700" asChild>
-                <Link href="/auth-page?mode=signup">{t.signUp}</Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setLanguage(lang => lang === 'en' ? 'es' : 'en')}
-              >
-                {language === 'en' ? 'ES' : 'EN'}
-              </Button>
-            </div>
-            <div className="md:hidden flex items-center">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-blue-600">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-              </button>
-            </div>
-          </nav>
-          {isMenuOpen && (
-            <div className="md:hidden mt-4 space-y-4">
-              <Link href="#" className="block text-gray-600 hover:text-blue-600">{t.solutions}</Link>
-              <Link href="#" className="block text-gray-600 hover:text-blue-600">{t.data}</Link>
-              <Link href="#" className="block text-gray-600 hover:text-blue-600">{t.pricing}</Link>
-              <Link href="#" className="block text-gray-600 hover:text-blue-600">{t.enterprise}</Link>
-              <Link href="/auth-page?mode=login" className="block text-blue-600 hover:underline">
-                {t.login}
-              </Link>
-              <Button className="block bg-blue-600 hover:bg-blue-700 w-full" asChild>
-                <Link href="/auth-page?mode=signup">{t.signUp}</Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="block w-full"
-                onClick={() => setLanguage(lang => lang === 'en' ? 'es' : 'en')}
-              >
-                {language === 'en' ? 'ES' : 'EN'}
-              </Button>
-            </div>
-          )}
-        </div>
-      </header>
+        <header className="bg-white shadow-sm">
+                <div className="container mx-auto px-4 py-4">
+                <nav className="flex justify-between items-center">
+                    <div className="text-2xl font-bold text-blue-600">GlobusScreen</div>
+                    <div className="hidden md:flex space-x-6">
+                    <Link href="#" className="text-gray-600 hover:text-blue-600">{t.solutions}</Link>
+                    <Link href="#" className="text-gray-600 hover:text-blue-600">{t.data}</Link>
+                    <Link href="#" className="text-gray-600 hover:text-blue-600">{t.pricing}</Link>
+                    <Link href="#" className="text-gray-600 hover:text-blue-600">{t.enterprise}</Link>
+                    </div>
+                    <div className="hidden md:flex space-x-4 items-center">
+                    <Link href="/auth-page?mode=login" className="text-blue-600 hover:underline">
+                        {t.login}
+                    </Link>
+                    <Button className="bg-blue-600 hover:bg-blue-700" asChild>
+                        <Link href="/auth-page?mode=signup">{t.signUp}</Link>
+                    </Button>
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setLanguage(lang => lang === 'en' ? 'es' : 'en')}
+                    >
+                        {language === 'en' ? 'ES' : 'EN'}
+                    </Button>
+                    </div>
+                    <div className="md:hidden flex items-center">
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-blue-600">
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                    </div>
+                </nav>
+                {isMenuOpen && (
+                    <div className="md:hidden mt-4 space-y-4">
+                    <Link href="#" className="block text-gray-600 hover:text-blue-600">{t.solutions}</Link>
+                    <Link href="#" className="block text-gray-600 hover:text-blue-600">{t.data}</Link>
+                    <Link href="#" className="block text-gray-600 hover:text-blue-600">{t.pricing}</Link>
+                    <Link href="#" className="block text-gray-600 hover:text-blue-600">{t.enterprise}</Link>
+                    <Link href="/auth-page?mode=login" className="block text-blue-600 hover:underline">
+                        {t.login}
+                    </Link>
+                    <Button className="block bg-blue-600 hover:bg-blue-700 w-full" asChild>
+                        <Link href="/auth-page?mode=signup">{t.signUp}</Link>
+                    </Button>
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        className="block w-full"
+                        onClick={() => setLanguage(lang => lang === 'en' ? 'es' : 'en')}
+                    >
+                        {language === 'en' ? 'ES' : 'EN'}
+                    </Button>
+                    </div>
+                )}
+                </div>
+            </header>
 
       <main>
         <section className="container mx-auto px-4 py-16">
